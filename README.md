@@ -1,4 +1,4 @@
-# Hello-World
+# C++ Repostiory 
 Hello,
-  My name is ModAmerS. This repository is all about C++ <br>
+  My name is Amer S. This repository is all about C++ <br>
   <hr>
