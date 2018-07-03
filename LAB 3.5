@@ -1,0 +1,33 @@
+//***********************************************************
+// Amer Sejdic
+// 8/26/15
+// Lab 3.5
+// Quick, simple grade calculator to decide weather you have passed or failed! 
+//***********************************************************
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+int main()
+{
+	int grade1, grade2, grade3, totalGrade;
+
+	cout << "Input your first grade: " << endl;
+	cin >> grade1;
+
+	cout << "Input your second grade: " << endl;
+	cin >> grade2;
+
+	cout << "Input your third grade: " << endl;
+	cin >> grade3;
+
+	totalGrade = grade1 + grade2 + grade3 / 3;
+
+	cout << "The average of all three grades is " << totalGrade << endl;
+
+	system("pause");
+
+	return 0;
+}
+
