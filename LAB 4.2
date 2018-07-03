@@ -1,0 +1,27 @@
+//***********************************************************
+// Amer Sejdic
+// Lab 4.2
+// This program prints “Your Pass” if a student’s average is 60 or higher and prints “You fail” otherwise
+//***********************************************************
+
+#include <iostream> 
+using namespace std;
+
+int main()
+{
+  // float varaible holds the grade average
+	float average; 
+
+	cout << "Enter your average: " << endl;
+	cin >> average;
+
+	if (average > 59)
+		cout << "You Pass" << endl;
+	else
+		cout << "You Fail" << endl;
+
+	system("pause");
+
+	return 0;
+}
+
