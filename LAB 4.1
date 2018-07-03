@@ -1,0 +1,39 @@
+//***********************************************************
+// Amer Sejdic
+// Lab 4.1
+// This program tests whether or not an initialized value is equal to a value inputted by the user 
+//***********************************************************
+
+#include <iostream> 
+using namespace std;
+
+int main()
+{
+	int num1; // num1 is not initialized 
+	int	num2; // num2 has been initialized 
+
+	cout << "Please enter the first integer" << endl;
+	cin >> num1;
+
+	cout << "Please enter the second integer" << endl;
+	cin >> num2;
+
+	cout << "num1 = " << num1 << " | num2 = " << num2 << endl;
+
+	if (num1 == num2) 
+	{
+		cout << "The values are the same." << endl;
+		cout << "Hey, that is a coincidence!" << endl;
+	}
+
+	if (num1 != num2) 
+	{
+		cout << "The values are not the same" << endl;
+	}
+
+	system("pause");
+
+	return 0;
+}
+
+
