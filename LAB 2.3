@@ -1,0 +1,32 @@
+//***********************************************************
+// Amer Sejdic
+// 8/26/15
+// Lab 2.3
+// This program will output the length and width of the rectangle.
+// The user will enter a length and width so it could automatically capture the area and the perimeter 
+//***********************************************************
+
+// Amer Sejdic 2.3
+
+#include <iostream> 
+using namespace std;
+
+
+int main()
+{
+	int Length, Width;
+
+
+	cout << "Please enter the Length of the rectangle " << endl;
+	cin >> Length;
+
+	cout << "Please enter the Width of the rectangle " << endl;
+	cin >> Width;
+
+	cout << "The area of the rectangle is " << Length * Width << endl;
+	cout << "The perimeter of the rectangle is " << (Length * 2) * (Width * 2) << endl;
+
+	system("pause");
+
+	return 0;
+}
