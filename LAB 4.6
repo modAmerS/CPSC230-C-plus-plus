@@ -1,0 +1,48 @@
+//***********************************************************
+// Amer Sejdic
+// Lab 4.4
+// This program gives you an average on your monthly bill
+//***********************************************************
+
+#include <iostream>
+#include <iomanip>			// needed for setprecision(4)
+using namespace std;
+
+int main()
+{
+	int sum = 0, quarter; 
+	float avg;
+
+	cout << "Please enter your water bill for quarter 1: \n";
+	cin >> quarter;
+	sum = sum + quarter;
+
+	cout << "Please enter your water bill for quarter 2: \n";
+	cin >> quarter;
+	sum = sum + quarter;
+
+	cout << "Please enter your water bill for quarter 3: \n";
+	cin >> quarter;
+	sum = sum + quarter;
+
+	cout << "Please enter your water bill for quarter 4: \n ";
+	cin >> quarter;
+	sum = sum + quarter;
+
+	avg = float(sum) / 12;
+
+	cout << "Your average monthly bill is " << setprecision(4) << avg << "$.\n ";
+
+	if (avg  > 75)
+		cout << "You're using excessive amounts of water!\n" << endl;
+	else if (avg >= 25 && avg <75)
+		cout << "You use a typical amount of water" << "\n";
+	else
+		cout << "Good you use a very small amount of water.\n Thanks for saving water.";
+
+	system("pause");
+
+	return 0;
+
+}
+
