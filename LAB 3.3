@@ -2,11 +2,12 @@
 // Amer Sejdic
 // 8/26/15
 // Lab 3.3
-// This program determines the size of the hypotenuse.
+// This program will input the value of two sides of a right triangle and then determine the size of the hypotenuse.
 //***********************************************************
 
 #include <iostream>
-#include <cmath>   // needed for mathamatical functions like sqrt()
+#include <iomanip> // setprecision
+#include <cmath>   // needed for math functions like sqrt()
 using namespace std;
 
 int main()
@@ -14,17 +15,19 @@ int main()
 	float a, b;		   // the smaller two sides of the triangle
 	float hyp;		   // the hypotenuse calculated by the program
 
+	// When inputting the values, please add a space after each value for it to catpure the input correctly
 	cout << "Please input the value of the two sides" << endl;
-	cin >> a >> b;  // space inbetween the two inputted values
+	cin >> a >> b;
 
 	// Formula that determines the hypotenuse.
 	hyp = sqrt(pow(a, 2.0) + pow(b, 2.0)); 
 
 	cout << "The sides of the right triangle are " << a << " and " << b << endl;
 
-	cout << "The hypotenuse is " << hyp << endl;
+	cout << "The hypotenuse is " << setprecision(3) << hyp << endl;
 
 	system("pause");
 
 	return 0;
 }
+
