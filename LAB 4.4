@@ -1,0 +1,42 @@
+//***********************************************************
+// Amer Sejdic
+// Lab 4.4
+// This program tells you your specific grade depending on what you inputted into the field (A,B,C,D)
+//***********************************************************
+
+#include <iostream> 
+using namespace std;
+
+int main()
+{
+	const int iScore = 100,
+		aScore = 90,
+		bScore = 80,
+		cScore = 70,
+		dScore = 60,
+		neg = 0;
+
+	float average; //holds the grade average
+
+	cout << "Input your average:\n";  //gets score
+	cin >> average; // IF ELSE
+
+	if (average > iScore)
+		cout << "Invalid data \n";
+	else if (average >= aScore)
+		cout << "You got an A \n";
+	else if (average >= bScore)
+		cout << "You got a B \n ";
+	else if (average >= cScore)
+		cout << "You got a C \n ";
+	else if (average >= dScore)
+		cout << "You have failed \n";
+	else if (average <= neg)
+		cout << "You have failed \n";
+	else
+		cout << "You have not entered anything into the input \n";
+
+	system("pause");
+
+	return 0;
+}
