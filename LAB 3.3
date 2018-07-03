@@ -1,0 +1,30 @@
+//***********************************************************
+// Amer Sejdic
+// 8/26/15
+// Lab 3.3
+// This program determines the size of the hypotenuse.
+//***********************************************************
+
+#include <iostream>
+#include <cmath>   // needed for mathamatical functions like sqrt()
+using namespace std;
+
+int main()
+{
+	float a, b;		   // the smaller two sides of the triangle
+	float hyp;		   // the hypotenuse calculated by the program
+
+	cout << "Please input the value of the two sides" << endl;
+	cin >> a >> b;  // space inbetween the two inputted values
+
+	// Formula that determines the hypotenuse.
+	hyp = sqrt(pow(a, 2.0) + pow(b, 2.0)); 
+
+	cout << "The sides of the right triangle are " << a << " and " << b << endl;
+
+	cout << "The hypotenuse is " << hyp << endl;
+
+	system("pause");
+
+	return 0;
+}
