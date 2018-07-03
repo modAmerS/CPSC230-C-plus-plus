@@ -1,0 +1,32 @@
+//***********************************************************
+// Amer Sejdic
+// Lab 4.4
+// This program illustrates the use of logical operators
+//***********************************************************
+
+#include <iostream> 
+using namespace std;
+
+int main()
+{
+	char year;
+	float gpa;
+
+	cout << "What year student are you ? " << endl;
+	cout << "Enter 1 (freshman), 2 (sophomore), 3 (junior), or 4 (senior)"
+		<< endl << endl;
+	cin >> year;
+
+	cout << "Now enter you GPA" << endl;
+	cin >> gpa;
+
+	if (gpa >= 2.0 || year == '4')
+		cout << "You are doing well, the road to graduation is near!" << endl;
+
+	else if (year != '4'  &&  gpa <  2.0)
+		cout << "You need more schooling" << endl;
+
+	system("pause");
+
+	return 0;
+}
