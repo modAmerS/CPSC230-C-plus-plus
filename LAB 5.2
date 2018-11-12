@@ -2,6 +2,7 @@
 // make a selection. A switch statement determines which item the user
 // has chosen. A do-while loop repeats until the user selects item E
 // from the menu.
+
 // Amer Sejdic 5.2
 
 #include <iostream>
@@ -110,3 +111,12 @@ int main()
 		cout << "Do you want to purchase more? (n for no): ";
 		cin >> repeatQuestion;
 
+	} 
+
+	while (!(repeatQuestion = 'e' || 'E'));
+
+	system("pause");
+
+	return 0;
+
+}
