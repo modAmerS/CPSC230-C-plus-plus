@@ -1,0 +1,23 @@
+// Do-while loop illustrating a letter output using char 
+// Amer Sejdic 5.1
+
+#include <iostream> 
+using namespace std;
+
+int main()
+{
+	char letter = 'a';
+	string str;
+
+	do
+	{
+		cout << "Please enter a letter" << endl;
+		cout << "Please enter the letter x to terminate the program \n";
+		cin >> letter, str;
+		cout << "The letter you entered is " << letter << endl;
+	} while (letter != 'x');
+
+	system("pause");
+
+	return 0;
+}
