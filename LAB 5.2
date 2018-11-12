@@ -1,1 +1,112 @@
+// This program displays a hot beverage menu and prompts the user to
+// make a selection. A switch statement determines which item the user
+// has chosen. A do-while loop repeats until the user selects item E
+// from the menu.
+// Amer Sejdic 5.2
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+
+	int numCups; // Fill in the code to define an integer variable called numCups,
+	float cost;  // a floating point variable called cost,
+	char beverage; // and a character variable called beverage
+
+	bool validBeverage;
+	char repeatQuestion;
+
+	cout << fixed << showpoint << setprecision(2);
+
+
+	do
+	{
+		cout << endl << endl;
+		cout << "Hot Beverage Menu" << endl << endl;
+		cout << "A: Coffee         $1.00" << endl;
+		cout << "B: Tea            $ .75" << endl;
+		cout << "C: Hot Chocolate  $1.25" << endl;
+		cout << "D: Cappuccino     $2.50 \n \n" << endl;
+
+		cout << "Enter the beverage A,B,C, or D you desire" << endl;
+		cout << "Enter E to exit the program" << endl << endl;
+
+		do {
+
+			cin >> beverage;// Fill in the code to read in beverage
+
+			switch (beverage)
+			{
+			case 'a': "Coffee"; break;
+			case 'A': validBeverage = true; break;
+			case 'b': "Tea"; break;
+			case 'B': validBeverage = true; break;
+			case 'c': "Hot Chocolate"; break;
+			case 'C': validBeverage = true; break;
+			case 'd': "Cappuccino"; break;
+			case 'D': validBeverage = true;
+				break;
+			default:  cout << "You did not select a proper menu item, Please try again: \n " << endl;
+				validBeverage = false;
+			} 
+
+		} while (validBeverage == false);
+
+
+		cout << "How many cups would you like?" << endl;
+
+		cin >> numCups;
+
+
+		while (numCups <= 0)
+		{
+			
+
+			cout << "Invalid number of cups, enter a valid choice: ";
+
+
+			cin >> numCups;
+
+		} 
+
+		do{
+			switch (beverage)
+			{
+			case 'a': "Coffee";
+			case 'A': cost = numCups * 1.0;
+				cout << "The total cost is $ " << cost << endl;
+				break;
+
+				
+
+			case 'b': "Tea";
+			case 'B': cost = numCups * 0.75;
+				cout << "The total cost is $ " << cost << endl;
+				break;
+
+			
+
+			case 'c': "Hot Chocolate";
+			case 'C': cost = numCups * 1.25;
+				cout << "The total cost is $ " << cost << endl;
+				break;
+
+				
+
+			case 'd': "Cappuccino";
+			case 'D': cost = numCups * 2.50;
+				cout << "The total cost is $ " << cost << endl;
+				break;
+
+			default:  cout << "Invalid number, enter a valid number: ";
+
+				validBeverage == false;
+			} 
+		} while (validBeverage = false);
+
+		cout << "Do you want to purchase more? (n for no): ";
+		cin >> repeatQuestion;
 
