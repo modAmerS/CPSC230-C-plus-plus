@@ -1,0 +1,29 @@
+//**************************************************
+// Amer Sejdic	
+// 10/22/16
+// CPSC 230
+// Prof. Lee
+// LAB 10.4
+// This program reading in a string of 50 or less characters and if its a palindrome
+// palindrome means word, phrase or sequence that reads the same backwards as forward
+//***************************************************
+
+#include<iostream>
+#include<cstring>
+#include<string>
+using namespace std;
+
+int main()
+{
+	string input;
+
+	cout << "Enter a string of no more than 50 characters: \n ";
+	cin >> input;
+
+	if (input == string(input.rbegin(), input.rend())) 
+	{
+		cout << input << " is a palindrome\n";
+
+		system("pause");
+	}
+}
