@@ -1,0 +1,48 @@
+
+//**************************************************
+// Amer Sejdic	
+// 10/22/16
+// CPSC 230
+// Prof. Lee
+// LAB 10.5
+// Simple program This function starts comparing the first character of each string. If they are equal to each other, 
+// it continues with the following pairs until the characters differ or until a terminating null-character is reached.
+//***************************************************
+
+#include <iostream>
+#include <cstring>
+#include <string>
+using namespace std;
+
+
+int main()
+{
+	char string1[25];
+	char string2[25];
+	int result;
+
+	cout << "please input the first name: " << endl;
+	cin.getline(string1, 25);
+
+	cout << "please input the second name:  " << endl;
+	cin.getline(string2, 25);
+
+
+	result = strcmp(string1, string2);
+
+
+	cout << "\nThe name is as follows: \n" << string2 << "\n" << string1 << endl;
+	
+	if (result = 0)
+	{
+		cout << "The names are the same! " << endl;
+	}
+	else
+	{
+		cout << "The names are the same! " << endl;
+	}
+
+	system("pause");
+	return 0;
+  
+  }
