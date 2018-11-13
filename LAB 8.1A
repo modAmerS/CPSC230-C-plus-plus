@@ -1,0 +1,85 @@
+//**************************************************
+// Amer Sejdic	
+// 10/5/16
+// CPSC 230
+// Prof. Lee
+// LAB 8.1 A
+// This program performs a linear search on a character array, also
+// this program tells you what postion the static numbers are placed as well as an exit number when finished
+//***************************************************
+
+#include<iostream>
+using namespace std;
+
+int searchList(const int[], int, int); // function prototype
+const int SIZE = 8;
+
+int main()
+{
+	int nums[SIZE] = { 3, 6, -19, 5, 5, 0, -2, 99 };
+	int results;
+	int number;
+  
+	do 
+  {
+		cout << "Enter a number to search for: Enter -99999 if you want to exit" << endl;
+		cin >> number;
+
+		results = searchList(nums, SIZE, number);
+		if (number == -99999){
+			cout << "Goodbye" << endl;
+		}
+    
+		else if (results == -1){
+			cout << "The number was not found in the list" << endl;
+      
+		}
+		else
+		{
+			cout << "The number is in the " << results + 1
+				<< " position of the list" << endl;
+		}
+
+	} while (number != -99999);
+
+	system("pause");
+
+	return 0;
+
+}
+
+
+//*******************************************************************
+//                      searchList
+//
+// task:	      This searches an array for a particular value
+// data in:       List of values in an array, the number of 
+//                elements in the array, and the value searched for
+//                in the array
+// data returned: Position in the array of the value or -1 if value
+//                not found
+//
+//*******************************************************************
+
+int searchList(const int List[], int numElems, int value)
+{
+
+	int index = 0;
+	int position = -1;
+	bool found = false;
+
+	while (index < numElems && !found)
+	{
+
+		if (List[index] == value)
+			// each array entry is checked to see if it contains
+		{              // the desired value.
+			found = true;
+			position = index;
+		}
+		index++;
+
+	}
+	return position;	     // return position or -1 
+
+}
