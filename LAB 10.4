@@ -1,0 +1,28 @@
+//**************************************************
+// Amer Sejdic	
+// 10/22/16
+// CPSC 230
+// Prof. Lee
+// LAB 10.4
+// Simple two string program that concatinates them together to create a sentence
+//***************************************************
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+
+int main()
+{
+	char string1[25] = "Total Eclipse ";
+	char string2[11] = "of the Sun";
+	cout << string1 << endl;
+	cout << string2 << endl;
+	strcat_s(string1, string2);
+	cout << string1 << endl;
+
+	system("pause");
+
+	return 0;
+}
