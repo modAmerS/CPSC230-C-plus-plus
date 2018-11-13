@@ -1,0 +1,64 @@
+// This program demonstrates partially initialized structure variables
+// You will be asked to input a yearly income and that will determine how much you owe in taxes this year
+// Amer Sejdic 11.2
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+struct taxPayer
+{
+	string name;
+	long int socialSecNum;
+	double taxRate;
+	double income;
+	double taxes;
+};
+
+int main()
+{
+
+	taxPayer citizen1 = { "Tim McGuiness", 255871234, 0.35 };
+	// Fill in code to initialize a structure variable named citizen1 so that
+	// the first three members are initilized.  Assume the name is Tim 
+	// McGuiness,the social security number is 255871234, and the tax rate is .35
+
+	taxPayer citizen2 = { "John Kane", 278990582, 0.29 };
+	// Fill in code to initialize a structure variable named citizen2 so that 
+	// the first three members are initialized.  Assume the name is John Kane,
+	// the social security number is 278990582, and the tax rate is .29
+
+	// cout << fixed << showpoint << setprecision(2);
+
+	citizen1.taxes = citizen1.income * citizen1.taxRate; // calculate taxes due for citizen1
+
+	cout << "Please input the yearly income for Tim McGuiness" << endl; // Fill in code to prompt the user to enter this year's income for the citizen1
+	cin >> citizen1.income; // Fill in code to read in this income to the appropriate structure member
+	cout << "\n ";
+
+	citizen1.taxes = citizen1.income * citizen1.taxRate; // Fill in code to determine this year's taxes for citizen1
+
+	cout << "Name: " << citizen1.name << endl;
+	cout << "Social Security Number: " << citizen1.socialSecNum << endl;
+	cout << "Taxes due for this year: $" << citizen1.taxes << endl << endl;
+
+    citizen2.taxes = citizen2.income * citizen2.taxRate; // calculate taxes due for citizen2
+
+	cout << "Please input the yearly income for John Kane" << endl; // FILL IN CODE to prompt the user to enter this year's income for citizen2
+	cin >> citizen2.income;// FILL IN CODE to read in this income to the appropriate structure member
+	cout << "\n ";
+
+	citizen2.taxes = citizen2.income * citizen2.taxRate; // FILL IN CODE to determine this year's taxes for citizen2
+
+
+
+	cout << "Name: " << citizen2.name << endl;
+	cout << "Social Security Number: " << citizen2.socialSecNum << endl;
+	cout << "Taxes due for this year: $" << citizen2.taxes << endl << endl;
+
+	system("pause");
+
+	return 0;
+}
