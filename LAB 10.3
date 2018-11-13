@@ -1,0 +1,31 @@
+//**************************************************
+// Amer Sejdic	
+// 10/22/16
+// CPSC 230
+// Prof. Lee
+// LAB 10.3
+// Using a simple get.line method to retrieve only 9 characters of whatever you input
+// also, it reads it back
+//***************************************************
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+	char line[10];
+	int length, count = 0;
+
+	cout << "Enter a sentence of no more than 9 characters:\n";
+	cin.getline(line, 10);
+
+	length = strlen(line); // strlen returns the length of the
+							// string currently stored in line
+	cout << "The name entered is:";
+	cout << line << "\n";
+
+	cout << endl;
+
+	system("pause"); 
+	return 0;
+}
