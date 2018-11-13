@@ -1,0 +1,61 @@
+// This program demonstrates the use of dynamic arrays
+// Ammer Sejdic 9.3
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+float* GetSales(int & numOfSales);
+int main()
+{
+	float *monthSales; // a pointer used to point to an array holding monthly sales float total = 0
+	float average; // average of monthly sales
+	int numOfSales; // number of sales to be processed
+	float total = 0; // total of all sales
+
+	cout << fixed << showpoint << setprecision(2);
+	
+	monthSales = GetSales(numOfSales);
+
+	for (int count = 0; count < numOfSales; count++)
+	{
+		total = total + monthSales[count];
+	}
+	average = total / numOfSales;
+
+	cout << "Average Monthly sale is $" << average << endl;
+	
+	free(monthSales);
+
+	system("pause");
+
+	return 0;
+}
+
+float* GetSales(int & numOfSales)
+{
+	float *dataPtr;
+	cout << "How many monthly sales will be processed? ";
+	cin >> numOfSales;
+
+	
+	dataPtr = new float[numOfSales];
+
+	if (dataPtr == NULL)
+	{
+		cout << "Error allocating memory!\n";
+		return NULL;
+	}
+
+	cout << "Enter the sales below\n";
+	for (int count = 0; count < numOfSales; count++)
+	{
+		cout << "Sales for Month number " << count + 1 << ":";
+		
+		cin >> dataPtr[count];
+
+	}
+
+	return dataPtr;
+
+}
