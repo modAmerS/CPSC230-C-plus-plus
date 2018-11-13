@@ -1,0 +1,53 @@
+// This program uses a structure to hold data about a rectangle 
+// It calculates the area and perimeter of a box using NESTED STRUCTURES
+// Amer Sejdic 11.4
+
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+struct dimensions
+{
+	float length;
+	float width;
+};
+
+struct results
+{
+	float area;
+	float perimeter;
+};
+
+struct rectangle
+{
+	results attributes;
+	dimensions sizes;
+};
+
+int main()
+{
+	
+	rectangle box;
+	cout << "Enter the length of a rectangle: ";
+	cin >> box.sizes.length;
+
+	cout << "Enter the width of a rectangle: ";
+	cin >> box.sizes.width;
+
+	cout << endl << endl;
+
+	box.attributes.area = box.sizes.width * box.sizes.length;
+	box.attributes.perimeter = 2 * box.sizes.width + 2 * box.sizes.length;
+
+
+	cout << fixed << showpoint << setprecision(2);
+	cout << "The area of the rectangle is " << box.attributes.area << endl;
+	cout << "The perimeter of the recangle is " << box.attributes.perimeter
+		<< endl;
+
+	system("pause");
+
+	return 0;
+}
