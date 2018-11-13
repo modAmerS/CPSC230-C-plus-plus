@@ -1,0 +1,84 @@
+// This program reads 5 inputs of weather temp and finds the average, lowest and the highest
+// temperature created out of all the 5 inputs 
+// Amer Sejdic 7.4 option (1)
+
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+typedef int Temperatures[50];
+
+float findAvg(const Temperatures, int);
+float findHighest(const Temperatures, int);
+float findLowest(const Temperatures, int);
+
+int main()
+{
+	Temperatures temp;
+	int numberOfTemps;
+	int pos = 0;
+	float avgOfTemps;
+	float highestTemp;
+	float lowestTemp;
+  
+	cout << "How many temperatures would you like to input? \n";
+	cin >> numberOfTemps;
+  
+	while (pos < numberOfTemps)
+	{
+		cout << "Enter temperature " << (pos + 1) << ": ";
+		cin >> temp[pos];
+		pos++;
+	}
+	numberOfTemps = pos;
+
+	avgOfTemps = findAvg(temp, numberOfTemps);
+	cout << fixed << setprecision(2) << endl << "The average of all the temperatures is " << avgOfTemps << endl;
+
+	lowestTemp = findLowest(temp, numberOfTemps);
+	cout << fixed << setprecision(2) << endl << "The lowest of all the temperatuures is " << lowestTemp << endl;
+
+	highestTemp = findHighest(temp, numberOfTemps);
+	cout << fixed << setprecision(2) << endl << "The highest of all the temperatuures is " << highestTemp << endl;
+
+	system("pause");
+
+	return 0;
+}
+
+float findAvg(const Temperatures array, int size)
+{
+	float sum = 0;
+	for (int pos = 0; pos < size; pos++)
+	{
+		sum = sum + array[pos];
+	}
+	return (sum / size);
+}
+
+float findHighest(const Temperatures array, int size)
+{
+	int highest = array[0];
+	for (int pos = 1; pos < size; pos++)
+	{
+		if (array[pos] > highest)
+		{
+			highest = array[pos];
+		}
+	}
+	return highest;
+}
+
+float findLowest(const Temperatures array, int size)
+{
+	int lowest = array[0];
+	for (int pos = 1; pos < size; pos++)
+	{
+		if (array[pos] < lowest)
+		{
+			lowest = array[pos];
+		}
+	}
+	return lowest;
+}
