@@ -1,0 +1,92 @@
+//**************************************************
+// Amer Sejdic	
+// 10/5/16
+// CPSC 230
+// Prof. Lee
+// LAB 8.1 EX 3
+// This program performs a linear search on a character array when a file is read
+//
+//***************************************************
+
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+
+int searchList(const int[], int, int); // function prototype
+const int SIZE = 8;
+
+int main()
+{
+	string line;
+	ifstream myfile("gradfile.txt");
+	if (myfile.is_open())
+	{
+		while (getline(myfile, line))
+		{
+			cout << line << '\n';
+		}
+		myfile.close();
+	}
+
+	else cout << "Unable to open file";
+
+
+	int nums[SIZE] = { 90, 6, -19, 21, 62, 0, -2, 99 };
+	int results;
+	int number;
+	do {
+		cout << "Enter a number to search for: Enter -99 if you want to quit" << endl;
+		cin >> number;
+
+		results = searchList(nums, SIZE, number);
+		if (number == -99999){
+			cout << "You entered -99999.  Thanks for searching." << endl;
+		}
+		else if (results == -1){
+			cout << "The number " << number
+				<< " was not found in the list" << endl;
+		}
+		else
+		{
+			cout << "The number " << number << " is in the " << results + 1
+				<< " position of the list" << endl;
+		}
+	} while (number != -99999);
+	return 0;
+}
+
+
+//*******************************************************************
+//                      searchList
+//
+// task:	      This searches an array for a particular value
+// data in:       List of values in an array, the number of 
+//                elements in the array, and the value searched for
+//                in the array
+// data returned: Position in the array of the value or -1 if value
+//                not found
+//
+//*******************************************************************
+
+int searchList(const int List[], int numElems, int value)
+{
+
+	int index = 0;
+	int position = -1;
+	bool found = false;
+
+	while (index < numElems && !found)
+	{
+
+		if (List[index] == value)
+			// each array entry is checked to see if it contains
+		{              // the desired value.
+			found = true;
+			position = index;
+		}
+		index++;
+
+	}
+	return position;	     // return position or -1 
+}
