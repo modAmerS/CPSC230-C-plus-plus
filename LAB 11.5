@@ -1,0 +1,84 @@
+// This program should have an array of twelve structures to hold travel information for the entire year. 
+// The program should prompt the user to enter data for each month. Once all data is entered, 
+// the program should calculate and output the average month number of landing planes, 
+// the average monthly number of departing planes, the total number of landing and departing planes for the year, 
+// and the greatest and least number of planes that landed on any one day 
+// lab 11.5
+// Amer Sejdic 
+
+
+#include <iostream>
+#include <iomanip>  // for setprecision
+using namespace std;
+
+struct MonthData {
+	unsigned long landed;
+	unsigned long departed;
+	unsigned long maxDailyLanded;
+	unsigned long minDailyLanded;
+};
+
+const unsigned NUM_MONTHS = 3;
+
+MonthData getMonthData(unsigned month) {
+	MonthData d;
+
+	cout << "Enter the total number of planes that landed in "
+		<< month << ": ";
+	cin >> d.landed;
+	cout << "Enter the total number of planes that departed in  "
+		<< month << ": ";
+	cin >> d.departed;
+	cout << "Enter the greatest number of planes"
+		<< " that landed on a single day in October " << month << ": ";
+	cin >> d.maxDailyLanded;
+	cout << "Enter the least number of planes"
+		<< " that landed on a single day in October " << month << ": ";
+	cin >> d.minDailyLanded;
+	cout << '\n';
+
+	return d;
+}
+
+int main() {
+	// declare data
+	MonthData data[NUM_MONTHS];
+
+	// get data
+	for (unsigned m = 0; m < NUM_MONTHS; m++) {
+		data[m] = getMonthData(m + 1);
+	}
+
+	// calculate data
+	unsigned long totalLanded = 0;
+	unsigned long totalDeparted = 0;
+	unsigned maxLandedMonth = 0;
+	unsigned minLandedMonth = 0;
+  
+	for (unsigned m = 0; m < NUM_MONTHS; m++) {
+		totalLanded += data[m].landed;
+		totalDeparted += data[m].departed;
+    
+		if (m != 0) { 
+			if (data[m].maxDailyLanded > data[maxLandedMonth].maxDailyLanded) {
+				maxLandedMonth = m;
+			}
+			if (data[m].minDailyLanded < data[minLandedMonth].minDailyLanded) {
+				minLandedMonth = m;
+			}
+		}
+	}
+
+	// regurgitate data
+	cout << std::fixed << std::setprecision(1);
+	cout << "The average monthly landings for the year is: " << (static_cast<float>(totalLanded) / NUM_MONTHS) << '\n';
+	cout << "The average monthly departures for the year is: " << (static_cast<float>(totalDeparted) / NUM_MONTHS) << '\n';
+	cout << "The total landingsd for the year is: " << totalLanded << '\n';
+	cout << "The total departures for the year is: " << totalDeparted << '\n';
+	cout << "THe greatest number of planes landed in a single day is " << data[maxLandedMonth].maxDailyLanded << " (Month " << maxLandedMonth << ")\n";
+	cout << "The least number of plans that landed in a single day is " << data[minLandedMonth].minDailyLanded << " (Month " << minLandedMonth << ")\n";
+
+	system("pause");
+	
+	return 0;
+}
