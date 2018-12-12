@@ -1,0 +1,54 @@
+//**************************************************
+// Amer Sejdic	
+// 11/2/16
+// CPSC 230
+// Prof. Lee
+// LAB 16.1
+// Write a templates fir the two functions minimum and maximum. The minimum function should accept two arguments
+// and return the value of the argument that is the lesser of the two. The maximum function should accept two arguments 
+// and return the value of the argument that is the greater of the two. Design a simple driver program that demonstrates 
+// the templates with various data types.
+//***************************************************
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+template <class T1>
+T1 minelement(T1 first, T1 last) {		// min Template 1 
+	if (first > last) {
+		return last;
+	}
+	else
+	{
+		return first;
+	}
+}
+
+template <class T2>
+T2 maxelement(T2 first, T2 last) {		// max template 2
+	if (first < last) {
+		return last;
+	}
+	else
+	{
+		return first; 
+	}
+}
+
+int main() {
+	 
+	string str1 = "Hi";
+	string str2 = "Hello";
+	
+	cout << "Minimum of 5, 3 is: " << minelement(5, 3) << "\n";
+	cout << "Maximum of 5, 3 is: " << maxelement(5, 3) << "\n";
+	cout << "Minimum of 5.5, 3.5 is: " << minelement(5.5, 3.5) << "\n";
+	cout << "Maximum of 5.5. 3.5 is: " << maxelement(5.5, 3.5) << "\n";
+	cout << "Minimum of Hello and hi is: " << minelement(str1, str2) << "\n";
+	cout << "Maximum of Hello and hi is: " << maxelement(str1, str2) << "\n"; \
+
+		system("pause");
+}
+
+
