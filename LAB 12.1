@@ -1,0 +1,63 @@
+//**************************************************
+// Amer Sejdic	
+// 10/30/16
+// CPSC 230
+// Prof. Lee
+// LAB 12.1
+// This program uses hours, pay rate, state tax and fed tax to determine gross and net 
+// pay. Using a file to read in the data.
+//***************************************************
+
+#include <fstream>
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	
+	bool openFileIn(fstream &, string);
+	fstream payfile; float gross;
+	float net;
+	float hours;
+	float payRate;
+	float stateTax;
+	float fedTax;
+
+
+	cout << fixed << setprecision(2) << showpoint;
+	
+	if (openFileIn(payfile, "payroll.dat"))
+	{ }
+	else
+		
+	{
+		cout << "Error opening file. \n";
+		cout << "It may not exist where indicated" << endl;
+		system("pause");
+		return 1;
+	}
+
+	cout << "Payrate      Hours    Gross Pay       Net Pay"
+		<< endl << endl;
+	
+	while (payfile >> hours)
+	{
+		payfile >> payRate >> stateTax >> fedTax;
+		gross = payRate * hours;
+		net = gross - (gross * stateTax) - (gross * fedTax);
+		cout << payRate << setw(15) << hours << setw(12) << gross
+			<< setw(12) << net << endl;
+	}
+	payfile.close();
+	system("pause");
+	return 0;
+}
+bool openFileIn(fstream &infile, string str)
+{
+	infile.open(str.c_str(), ios::in);
+	if (infile.fail())
+		return false;
+	else
+		return true;
+}
