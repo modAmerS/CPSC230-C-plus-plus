@@ -1,0 +1,40 @@
+//Amer Sejdic 16.2
+
+#include <iostream>
+using namespace std;
+
+template <class intTemplate>
+intTemplate absoluteValue (intTemplate total)
+
+{
+		return abs(total);
+}
+
+
+int main()
+{
+
+	int Total;
+	double sum = 0;
+	double total;
+
+	cout << "How many integer values do you wish to total: " << endl;
+	cin >> Total;
+	
+	double numBs;
+
+	for (int i = 0; Total > i; i++)
+	{
+		cout << "enter a value: ";
+		cin >> numBs;
+		sum += numBs;
+	}
+
+	cout << "The Total is " << sum << endl;
+
+	cout << "Absolute value is: " << absoluteValue(sum) << endl;
+
+	system("pause");
+
+	return 0;
+}
