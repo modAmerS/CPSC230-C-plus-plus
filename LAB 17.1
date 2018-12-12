@@ -1,0 +1,110 @@
+// Amer Sejdic 17.1
+
+#include <iostream>
+using namespace std;
+
+void Insert(int data[], int item, int& length);
+bool isEmpty(int[], int size);
+bool isPresent(int data[], int item, int length);
+void Delete(int data[], int item, int &length);
+void printList(int data[], int length);
+
+int main()
+{
+	const int MAXLENGTH = 50;
+	int data[MAXLENGTH];
+	int length = 0;
+
+	cout << "1. Insert 15, 39, -90, 64 into a list." << "\n";
+		Insert(data, 15, length);	
+		Insert(data, 39, length);
+		Insert(data, -90, length);
+		Insert(data, 64, length);
+			printList(data, length);	// print the array length
+
+	cout << "\n2. The current length of the list is " << length << "\n" << endl; // print current length (vrb)
+	cout << "3. Check whether 39 is in the list." << "\n"; 
+
+	if (isPresent(data, 39, length))	// if 39 is present = "the number is in the list"
+	{
+		cout << "The number is in the list." << "\n";
+	}
+	else
+	{
+		cout << "The number is not in the list." << "\n";	// if not "The number is not in the list."
+	}
+
+	cout << "Delete 39.\n";
+
+	Delete(data, 39, length);	// deleting 39 from the array
+		printList(data, length);
+
+	cout << endl;
+	cout << "Delete -90, 15, 64 sequentially." << "\n";
+
+	Delete(data, -90, length);	// delete the rest
+	Delete(data, 15, length);
+	Delete(data, 64, length);
+
+	if (isEmpty(data, length))	// checking if the array list is empy or not
+	{
+		cout << "The list is empty." << "\n\n";
+	}
+	else
+	{
+		cout << "The list is not empty." << "\n";
+	}
+
+	system("pause");
+
+	return 0;
+}
+
+void Insert(int nums[], int item, int& length)	// capture length, then on to the next
+{
+	nums[length] = item;
+	length++;
+}
+
+bool isEmpty(int arr[], int size)	// check if it's empty 
+{
+	return (size == 0);
+}
+
+bool isPresent(int anothaOne[], int item, int length)	// checking if the number in the array list is there
+{
+	bool isThere = false;
+	for (int i = 0; i < length; i++)
+	{
+		if (anothaOne[i] == item)
+		{
+			isThere = true;
+		}
+	}
+	return isThere;
+}
+
+void Delete(int plusTax[], int item, int &length)	// deleting a number in the array
+{
+	int  i = 0;
+	while (i < length  &&  item != plusTax[i])
+		i++;
+
+	if (i < length)
+	{
+		plusTax[i] = plusTax[length - 1];
+		length--;
+	}
+
+}
+
+void printList(int lotsOfArrays[], int length)	// printing out the list array 
+{
+	cout << "Now, ";
+	for (int i = 0; i < length; i++)
+	{
+		cout << lotsOfArrays[i] << ", ";
+	}
+	cout << "are in the list." << "\n";
+}
+
